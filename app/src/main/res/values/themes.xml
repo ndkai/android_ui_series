@@ -17,6 +17,7 @@
     <style name="Theme.CodingWithTeaAndroidUiSeries.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
     <style name="Theme.CodingWithTeaAndroidUiSeries.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
