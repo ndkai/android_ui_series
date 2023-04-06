@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isEmpty
 import androidx.navigation.ui.AppBarConfiguration
 import com.iot.codingwithteaandroiduiseries.databinding.ActivityLoginBinding
 import com.iot.codingwithteaandroiduiseries.databinding.ActivityMain2Binding
@@ -17,6 +18,12 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.loginBtn.setOnClickListener {
+            if(binding.password.editText?.text.toString().isEmpty() || binding.password.editText?.text.toString().length < 6) {
+                binding.password.error = "Invalid input"
+            }
+        }
 
         binding.signupBnt.setOnClickListener {
            var intent = Intent(this, SignupActivity::class.java)
